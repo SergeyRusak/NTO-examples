@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<title>5. Встроенное видео</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script>
+      AFRAME.registerComponent('videohandler', {
+        tick: function (){
+          var entity = document.querySelector('a-video')
+          if(document.querySelector('a-marker').object3D.visible == true){entity.play();
+          }
+          else{ entity.pause();
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene arjs embedded videohandler>
+      <a-assets>
+        <video controls muted id = "video" src="https://cdn.glitch.global/852925ce-ab07-44a7-acfa-a28d65ce9221/task5.mp4?v=1674577396146"></video>
+      </a-assets>
+      <a-entity camera></a-entity>
+      <a-marker preset="hiro" id="#scene">
+        <a-plane position="0 1 0" material="color: blue" rotation="-90 0 0">
+          <a-video src="#video"></a-video>
+        </a-plane>
+      </a-marker>
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>12. Трёхмерные объекты</title>
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    
+  </head>
+  <body>
+    <a-scene arjs>
+      <a-assets>
+        <a-asset-item id="model5" src="https://cdn.glitch.global/f8aa7fb4-578f-48f2-b51a-afcc48cdf8c2/ildar.glb?v=1674590818966"></a-asset-item>
+        <a-asset-item id="model4" src="https://cdn.glitch.global/f8aa7fb4-578f-48f2-b51a-afcc48cdf8c2/gosha.glb?v=1674590265327"></a-asset-item>
+        <a-asset-item id="model3" src="https://cdn.glitch.global/f8aa7fb4-578f-48f2-b51a-afcc48cdf8c2/vanya.glb?v=1674591602884"></a-asset-item>
+        <a-asset-item id="model2" src="https://cdn.glitch.global/f8aa7fb4-578f-48f2-b51a-afcc48cdf8c2/yarik.glb?v=1674591877248"></a-asset-item>
+        <a-asset-item id="model1" src="https://cdn.glitch.global/f8aa7fb4-578f-48f2-b51a-afcc48cdf8c2/dima2.glb?v=1674588812824"></a-asset-item>
+      </a-assets>
+      <a-entity camera></a-entity>
+      <a-marker type="pattern" url="https://cdn.glitch.global/f8aa7fb4-578f-48f2-b51a-afcc48cdf8c2/gosha.patt?v=1674558901942">
+        <a-gltf-model src="#model1" 
+                      animation-mixer="clip: dima; loop: repeat;"></a-gltf-model>   
+      </a-marker>
+      <a-marker preset="kanji">
+      <a-gltf-model src="#model2"
+                    animation-mixer="clip: yarik; loop:repeat;"></a-gltf-model>
+      </a-marker>
+      <a-marker preset="hiro">
+      <a-gltf-model src="#model3"
+                    animation-mixer="clip: vanya; loop: repeat;"></a-gltf-model>
+      </a-marker>
+      <a-marker type="pattern" url="https://cdn.glitch.global/f8aa7fb4-578f-48f2-b51a-afcc48cdf8c2/pattern-1.patt?v=1674567152713">
+        <a-gltf-model src="#model4"
+                      animation-mixer="clip: gosha; loop: repeat;"></a-gltf-model>              
+      </a-marker>
+      <a-marker type="pattern" url="https://cdn.glitch.global/f8aa7fb4-578f-48f2-b51a-afcc48cdf8c2/pattern-2.patt?v=1674567614901">
+        <a-gltf-model src="#model5"
+                      animation-mixer="clip: ildar; loop: repeat;"></a-gltf-model>             
+      </a-marker>
+    </a-scene>
+  </body>
+</html>
