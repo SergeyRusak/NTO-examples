@@ -19,13 +19,11 @@
   <body>
     <a-scene arjs embedded videohandler>
       <a-assets>
-        <video controls muted id = "video" src="https://cdn.glitch.global/852925ce-ab07-44a7-acfa-a28d65ce9221/task5.mp4?v=1674577396146"></video>
+        <video controls muted id = "video" src="../media/video/5.mp4"></video>
       </a-assets>
       <a-entity camera></a-entity>
       <a-marker preset="hiro" id="#scene">
-        <a-plane position="0 1 0" material="color: blue" rotation="-90 0 0">
-          <a-video src="#video"></a-video>
-        </a-plane>
+         <a-video src="#video" rotation ="-90 0 0"></a-video>
       </a-marker>
     </a-scene>
   </body>

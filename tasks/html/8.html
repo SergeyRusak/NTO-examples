@@ -4,22 +4,13 @@
     <title>8. Двигающаяся поверхность </title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-
-    <!---Imports-->
-
-    
   </head>
-
   <body>
-    <a-scene arjs embedded>
-      <a-assets>
-        <img id="material" src="https://cdn.glitch.global/0563ec66-49c5-47ae-bc54-84b2d80210af/Vhn8gF96GOY.jpg?v=1674634258596"/>
-      </a-assets>  
-      
+    <a-scene arjs embedded>     
       <a-entity camera></a-entity>
       <a-marker preset="hiro">
-        <a-plane material="src:#material" rotation="270 0 0" animation="property: position; dir: alternate; dur: 1000;
-                                 easing: easeInSine; to: 0 1 0; loop: true"></a-plane>
+        <a-plane color="green" rotation="270 0 0" 
+        animation="property: position; dir: alternate; dur: 1000; easing: easeInSine; to: 0 1 0; loop: true"></a-plane>
       </a-marker>
 
     </a-scene>

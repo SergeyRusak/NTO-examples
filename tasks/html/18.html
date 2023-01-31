@@ -3,16 +3,16 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<title>Hello, AR Cube!</title>
 	<!-- include three.js library -->
-	<script src='js/three.js'></script>
+	<script src='../js/three.js'></script>
 	<!-- include jsartookit -->
-	<script src="scripts/tools/artoolkit.min.js"></script>
-	<script src="scripts/tools/artoolkit.api.js"></script>
+	<script src="../js/tools/artoolkit.min.js"></script>
+	<script src="../js/tools/artoolkit.api.js"></script>
 	<!-- include threex.artoolkit -->
-	<script src="scripts/threex/threex-artoolkitsource.js"></script>
-	<script src="scripts/threex/threex-artoolkitcontext.js"></script>
-	<script src="scripts/threex/threex-arbasecontrols.js"></script>
-	<script src="scripts/threex/threex-armarkercontrols.js"></script>
-	<script src="scripts/threex/threex-arsmoothedcontrols.js"></script>
+	<script src="../js/threex/threex-artoolkitsource.js"></script>
+	<script src="../js/threex/threex-artoolkitcontext.js"></script>
+	<script src="../js/threex/threex-arbasecontrols.js"></script>
+	<script src="../js/threex/threex-armarkercontrols.js"></script>
+	<script src="../js/threex/threex-arsmoothedcontrols.js"></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
@@ -93,7 +93,7 @@ function initialize()
 
 	// create atToolkitContext
 	arToolkitContext = new THREEx.ArToolkitContext({
-		cameraParametersUrl: 'data/camera_para.dat',
+		cameraParametersUrl: '../data/camera_para.dat',
 		detectionMode: 'mono'
 	});
 	
@@ -112,7 +112,7 @@ function initialize()
 	
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, kanjiMarker, {
 		type : 'pattern',
-		patternUrl : "data/kanji.patt",
+		patternUrl : "..data/kanji.patt",
 	})
 
 	// interpolates from last position to create smoother transitions when moving.
@@ -136,7 +136,7 @@ function initialize()
 	// material for portal (for debugging)
 	
 	let defaultMaterial = new THREE.MeshBasicMaterial({
-		map: loader.load("images/sphere-colored.png"), 
+		map: loader.load("../media/image/18.png"), 
 		color: 0x444444,
 		side: THREE.DoubleSide,
 		transparent: true,
@@ -168,16 +168,13 @@ function initialize()
 	portalBorderMesh.layers.set(0);
 	smoothedRoot.add(portalBorderMesh);
 	
-	// the world beyond the portal
-	
-	// textures from http://www.humus.name/
 	let skyMaterialArray = [
-		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/posx.jpg"), side: THREE.BackSide } ),
-		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/negx.jpg"), side: THREE.BackSide } ),
-		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/posy.jpg"), side: THREE.BackSide } ),
-		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/negy.jpg"), side: THREE.BackSide } ),
-		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/posz.jpg"), side: THREE.BackSide } ),
-		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/negz.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("../media/image/18/posx.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("../media/image/18/negx.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("../media/image/18/posy.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("../media/image/18/negy.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("../media/image/18/posz.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("../media/image/18/negz.jpg"), side: THREE.BackSide } ),
 	];
 	let skyMesh = new THREE.Mesh(
 		new THREE.CubeGeometry(30,30,30),

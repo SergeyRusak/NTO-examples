@@ -3,15 +3,15 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<title>Hello, world!</title>
 	<!-- include three.js library -->
-	<script src='js/three.js'></script>
+	<script src='../js/three.js'></script>
 	<!-- include jsartookit -->
-	<script src="scripts/tools/artoolkit.min.js"></script>
-	<script src="scripts/tools/artoolkit.api.js"></script>
+	<script src="../js/tools/artoolkit.min.js"></script>
+	<script src="../js/tools/artoolkit.api.js"></script>
 	<!-- include threex.artoolkit -->
-	<script src="scripts/threex/threex-artoolkitsource.js"></script>
-	<script src="scripts/threex/threex-artoolkitcontext.js"></script>
-	<script src="scripts/threex/threex-arbasecontrols.js"></script>
-	<script src="scripts/threex/threex-armarkercontrols.js"></script>
+	<script src="../js/threex/threex-artoolkitsource.js"></script>
+	<script src="../js/threex/threex-artoolkitcontext.js"></script>
+	<script src="../js/threex/threex-arbasecontrols.js"></script>
+	<script src="../js/threex/threex-armarkercontrols.js"></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
@@ -90,7 +90,7 @@ function initialize()
 
 	// create atToolkitContext
 	arToolkitContext = new THREEx.ArToolkitContext({
-		cameraParametersUrl: 'data/camera_para.dat',
+		cameraParametersUrl: '../data/camera_para.dat',
 		detectionMode: 'mono'
 	});
 	
@@ -107,13 +107,13 @@ function initialize()
 	markerRootA = new THREE.Group();
 	scene.add(markerRootA);
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRootA, {
-		type: 'pattern', patternUrl: "data/letterA.patt",
+		type: 'pattern', patternUrl: "../data/letterA.patt",
 	});
 	
 	markerRootB = new THREE.Group();
 	scene.add(markerRootB);
 	let markerControls2 = new THREEx.ArMarkerControls(arToolkitContext, markerRootB, {
-		type: 'pattern', patternUrl: "data/letterB.patt",
+		type: 'pattern', patternUrl: "../data/letterB.patt",
 	});
 
 	////////////////////////////////////////////////////////////
@@ -139,7 +139,7 @@ function initialize()
 	ballMesh = new THREE.Mesh(
 		new THREE.SphereGeometry(0.25, 32, 32),
 		new THREE.MeshLambertMaterial({ 
-			map: loader.load("images/basketball-gray.png"), 
+			map: loader.load("../media/image/14.png"), 
 			color: 0xff8800
 		})
 	);

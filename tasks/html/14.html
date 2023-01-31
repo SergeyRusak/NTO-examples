@@ -90,7 +90,7 @@ function initialize()
 
 	// create atToolkitContext
 	arToolkitContext = new THREEx.ArToolkitContext({
-		cameraParametersUrl: 'data/camera_para.dat',
+		cameraParametersUrl: '../data/camera_para.dat',
 		detectionMode: 'mono'
 	});
 	
@@ -107,7 +107,7 @@ function initialize()
 	markerRoot1 = new THREE.Group();
 	scene.add(markerRoot1);
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
-		type: 'pattern', patternUrl: "data/kanji.patt",
+		type: 'pattern', patternUrl: "../data/kanji.patt",
 	})
 
 	////////////////////////////////////////////////////////////
@@ -132,7 +132,7 @@ function initialize()
 	
 	
 	ballMeshArray = [];
-	let ballTexture = loader.load("images/basketball-gray.png");
+	let ballTexture = loader.load("../media/image/14.png");
 	let ballColors = [ 0xff0000, 0x009900, 0xff8800, 0x0000ff ];
 	let p = 1;
 	let ballPositions = [ new THREE.Vector3(p,1,p), new THREE.Vector3(-p,1,p), 

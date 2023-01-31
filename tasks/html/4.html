@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () =>{
             let audio1 = document.querySelector("#a1");
           
             let marker1 = document.querySelector("#m1")
-
-
           
             marker1.addEventListener('markerLost', function() {
               console.log("lost")
@@ -23,13 +21,9 @@ document.addEventListener("DOMContentLoaded", () =>{
            marker1.addEventListener('markerFound', function() {
              console.log("found")
                audio1.components.sound.playSound();
-            });
-                     
-               
+            });         
         });
-
-        </script>
-        
+        </script>        
        <a-scene
           embedded
           ar
@@ -39,12 +33,12 @@ document.addEventListener("DOMContentLoaded", () =>{
           arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
         >
            <a-assets>
-                <audio id="Audio1" src="https://cdn.glitch.global/fda921a5-b366-4777-880b-3ab40d682f07/chirp.mp3?v=1674576395350"></audio>      
+                <audio id="Audio1" src="../media/audio/4.mp3"></audio>      
            </a-assets>
           
            <a-marker preset="hiro" id="m1">    
 
-                <a-box src="https://cdn.glitch.global/97bdfe29-90e8-4663-bcd3-bc6e13b5cd85/note.jpg?v=1674615615875">
+                <a-box color="red">
                     <a-sound src="#Audio1" id="a1"></a-sound>
                 </a-box>
 
